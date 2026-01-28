@@ -49,5 +49,38 @@
   <body>
 
     <div class="capa">
+      <img src="img/capa.png" class="bg">
 
-      
+  <!-- contagem -->
+  <div class="contagem" id="contador"></div>
+
+  <!-- laço clicável -->
+  <a href="convite.html" class="laco-btn">
+    <img src="img/laco.png" alt="Abrir convite">
+  </a>
+
+</div>
+
+<script>
+const dataCasamento = new Date("2026-04-18T19:00:00");
+
+function atualizarContagem() {
+  const agora = new Date();
+  const diff = dataCasamento - agora;
+
+  if (diff <= 0) {
+    document.getElementById("contador").innerText = "É hoje! 💍";
+    return;
+  }
+
+  const dias = Math.floor(diff / (1000*60*60*24));
+  document.getElementById("contador").innerText =
+    `${dias} dias para o grande dia ✨`;
+}
+
+setInterval(atualizarContagem, 1000);
+atualizarContagem();
+</script>
+
+</body>
+</html>
