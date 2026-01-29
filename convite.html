@@ -19,7 +19,8 @@ body{
 
 .convite{
   position:relative;
-  width:390px;
+  width:100%;
+  max-width:390px;
   background:#fff;
   padding-bottom:40px;
 }
@@ -138,7 +139,7 @@ body{
   z-index: 9999;
 }
   .contador{
-  margin-top:12px
+  margin-top:14px;
   width: 100%;
   text-align: center;
   font-size: 16px;
@@ -146,14 +147,20 @@ body{
   color: #9b1c31;
   font-family: 'Cormorant SC', serif;
   }
+  .contador-titulo{
+  color:#9b1c31;
+  font-size:15px;
+  letter-spacing:2px;
+  }
   .contador strong{
   display: block;
   margin-top: 6px;
-  font-size: 16px;
+  font-size: 18px;
   color: #c9a24d; /* dourado pros números */
+  font-weight:600;
 }
   .versiculo{
-  margin: 70px 25px 20px;
+  margin: 35px 25px 20px;
   text-align: center;
 }
 
@@ -174,7 +181,7 @@ body{
 .linha-decorativa{
   width: 250px;
   height: 6px;
-  margin: 12px auto 0;
+  margin: 6px auto 0;
   background:
      linear-gradient(#c9a24d, #c9a24d) top,
     linear-gradient(#9b1c31, #9b1c31) bottom;
@@ -185,7 +192,7 @@ body{
   width: 250px;
   height: 1px;
   background-color: #9b1c31;
-  margin: 16px auto;
+  margin: 8px auto;
   opacity: 0.8;
 }
 
@@ -306,9 +313,8 @@ function iniciarContagem() {
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
     document.getElementById("contador").innerHTML =
-      `💍Nosso grande dia é em:${dias}d ${horas}h ${minutos}m ${segundos}s`;
-  }, 1000);
-}
+     <span class="contador-titulo">💍Nosso grande dia é em:</span>
+<strong>${dias}d ${horas}h ${minutos}m ${segundos}s</strong>
 
 iniciarContagem();
   </script>
