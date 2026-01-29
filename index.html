@@ -2,88 +2,93 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Convite - Andreza & Joab</title>
+<title>Andreza & Joab</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   background:#f8f4ef;
-  font-family:'Cormorant Garamond', serif;
-}
-
-.container{
-  max-width:400px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
-}
-
-.logo{
-  width:220px;
-  margin:20px auto;
-}
-
-.ornamento{
-  width:80px;
-  margin:10px;
-}
-
-.icones{
   display:flex;
-  justify-content:space-around;
-  margin-top:30px;
+  justify-content:center;
 }
 
-.icones a img{
-  width:55px;
-  transition:0.3s;
+.capa{
+  position:relative;
+  width:390px;
+  height:780px;
+  background:#fff;
+  overflow:hidden;
 }
 
-.icones a img:hover{
-  transform:scale(1.1);
+.linha{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
 }
 
-.rodape{
-  margin-top:40px;
+.flor-topo{
+  position:absolute;
+  top:0;
+  right:0;
+  width:120px;
+}
+
+.flor-baixo{
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:120px;
+}
+
+.borrado{
+  position:absolute;
+  bottom:60px;
+  right:20px;
+  width:140px;
+  opacity:0.6;
+}
+
+.laco{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:260px;
+  cursor:pointer;
+}
+
+.texto{
+  position:absolute;
+  top:46%;
+  width:100%;
+  text-align:center;
+  color:#8b1d2c;
+  font-style:italic;
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="capa">
 
-  <img src="img/linha-dourada.png" class="ornamento">
+  <img src="images/linha-dourada.png" class="linha">
+  <img src="images/flores.png" class="flor-topo">
+  <img src="images/flores.png" class="flor-baixo">
+  <img src="images/img-dourada.png" class="borrado">
 
-  <img src="img/logo-andreza-joab.png" class="logo">
+  <div class="texto">Toque para abrir</div>
 
-  <p>Com alegria convidamos você para celebrar conosco este momento especial.</p>
-
-  <p><strong>Data:</strong> ___ / ___ / ____ <br>
-     <strong>Horário:</strong> __:__ <br>
-     <strong>Local:</strong> __________________</p>
-
-  <div class="icones">
-
-    <a href="https://maps.google.com" target="_blank">
-      <img src="img/icone-local.png">
-    </a>
-
-    <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank">
-      <img src="img/icone-comfrmacao.png">
-    </a>
-
-    <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank">
-      <img src="img/icone-presentes.png">
-    </a>
-
-  </div>
-
-  <div class="rodape">
-    <img src="img/flor-roda-pe.png" width="120">
-  </div>
+  <img src="images/laco-pagina1.png" class="laco" onclick="abrirConvite()">
 
 </div>
+
+<script>
+function abrirConvite(){
+  window.location.href = "convite.html";
+}
+</script>
 
 </body>
 </html>
