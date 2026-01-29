@@ -56,17 +56,25 @@ body{
   top:50%;
   left:50%;
   transform:translate(-50%,-50%) rotate(90deg);
-  width:250px;
+  width:340px;
   cursor:pointer;
+  z-index:5;
 }
+  .laco{
+    transition:transform 0.3s ease;
+  }
+  .laco.hover{
+    transform:translate(-50%,-50%)rotate(90deg)scale(1.03);
+  }
 
 .texto{
   position:absolute;
-  top:46%;
+  top:60%;
   width:100%;
   text-align:center;
   color:#8b1d2c;
   font-style:italic;
+  opacity:0.85;
 }
 .contador{
   position: absolute;
