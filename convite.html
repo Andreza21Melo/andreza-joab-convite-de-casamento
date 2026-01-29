@@ -2,47 +2,77 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Andreza & Joab</title>
+<title>Convite - Andreza & Joab</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
-  background: #fff;
-  font-family: 'Cormorant Garamond', serif;
+body{
+  margin:0;
+  background:#f8f4ef;
+  display:flex;
+  justify-content:center;
+  font-family: 'Georgia', serif;
 }
 
-.convite {
-  max-width: 480px;
-  margin: auto;
-  position: relative;
+.convite{
+  position:relative;
+  width:390px;
+  background:#fff;
+  padding-bottom:40px;
 }
 
-.convite img.bg {
-  width: 100%;
-  display: block;
+.linha{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
 }
 
-.icones {
-  position: absolute;
-  bottom: 18%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding: 0 40px;
+.flor-topo{
+  position:absolute;
+  top:0;
+  right:0;
+  width:120px;
 }
 
-.icone {
-  text-align: center;
-  text-decoration: none;
-  color: #9b1c31;
-  font-size: 12px;
+.logo{
+  display:block;
+  margin:80px auto 20px;
+  width:240px;
 }
 
-.icone img {
-  width: 45px;
-  display: block;
-  margin: auto;
+.texto{
+  text-align:center;
+  color:#666;
+  padding:0 25px;
+}
+
+.data{
+  text-align:center;
+  margin:20px 0;
+  color:#8b1d2c;
+}
+
+.icones{
+  display:flex;
+  justify-content:space-around;
+  margin:30px 20px 10px;
+}
+
+.icones img{
+  width:55px;
+}
+
+.toque{
+  text-align:center;
+  font-size:14px;
+  color:#888;
+}
+
+.rodape{
+  display:block;
+  margin:30px auto 0;
+  width:80px;
 }
 </style>
 </head>
@@ -50,30 +80,40 @@ body {
 
 <div class="convite">
 
-  <!-- fundo convite -->
-  <img src="img/convite-bg.png" class="bg">
+  <img src="images/linha-dourada.png" class="linha">
+  <img src="images/flores.png" class="flor-topo">
+
+  <img src="images/logo-andreza-joab.png" class="logo">
+
+  <div class="texto">
+    <p>Convidam para o seu casamento, a realizar-se:</p>
+  </div>
+
+  <div class="data">
+    <strong>SÁBADO</strong><br>
+    18 ABRIL 2026<br>
+    ÀS 19H
+  </div>
 
   <div class="icones">
 
-    <!-- LOCAL -->
-    <a class="icone" href="https://maps.google.com/?q=ENDERECO_AQUI" target="_blank">
-      <img src="img/icon-local.png">
-      Local
+    <a href="https://maps.google.com" target="_blank">
+      <img src="images/icone-local.png">
     </a>
 
-    <!-- PRESENÇA -->
-    <a class="icone" href="LINK_DO_GOOGLE_FORMS" target="_blank">
-      <img src="img/icon-presenca.png">
-      Presença
+    <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank">
+      <img src="images/icone-comfrmacao.png">
     </a>
 
-    <!-- PRESENTES -->
-    <a class="icone" href="LINK_DA_SUA_LISTA" target="_blank">
-      <img src="img/icon-presente.png">
-      Presentes
+    <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank">
+      <img src="images/icone-presentes.png">
     </a>
 
   </div>
+
+  <div class="toque">Toque nos ícones para interagir</div>
+
+  <img src="images/flor-roda-pe.png" class="rodape">
 
 </div>
 
