@@ -99,11 +99,59 @@ body{
   color: #c9a24d;
   font-family: 'Cormorant SC', bold;
   }
+  .versiculo{
+  margin: 30px 25px 10px;
+  text-align: center;
+}
+
+.texto-versiculo{
+  font-family: 'Sacramento', cursive;
+  font-size: 20px;
+  color: #8b1d2c;
+  line-height: 1.4;
+}
+
+.referencia-versiculo{
+  margin-top: 8px;
+  font-family: 'Cormorant SC', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #777;
+}
+  .icone-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #8b1d2c;
+  font-family: 'Cormorant SC', serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.icone-item span{
+  margin-top: 6px;
+}
+
+.icone-item img{
+  width: 55px;
+}
+
 </style>
 </head>
 <body>
 
   <button class="btn-voltar" onclick="voltarCapa()">←</button>
+
+<div class="versiculo">
+  <p class="texto-versiculo">
+    “Assim, eles já não são dois, mas sim uma só carne.
+    Portanto, o que Deus uniu, ninguém separe.”
+  </p>
+  <p class="referencia-versiculo">
+    Mateus 19:6
+  </p>
+</div>  
 
 <div class="convite">
 
@@ -131,14 +179,17 @@ body{
 
     <a href="https://maps.google.com" target="_blank">
       <img src="img/icone-local.png">
+       <span>LOCAL</span>
     </a>
 
     <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank">
       <img src="img/icone-confirmacao.png">
+       <span>CONFIRMAR PRESENÇA</span>
     </a>
 
     <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank">
       <img src="img/icone-presentes.png">
+      <span>LISTA DE PRESENTES</span>
     </a>
 
   </div>
