@@ -57,13 +57,46 @@ body{
 }
 
 .icones{
-  display:flex;
-  justify-content:space-evenly;
-  margin:30px 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 10px;
 }
 
-.icones img{
-  width:36px;
+.icone-curvo{
+  position: relative;
+  width: 120px;
+  height: 140px;
+  text-decoration: none;
+}
+
+.icone-curvo svg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.icone-curvo text{
+  fill: #8b1d2c;
+  font-family: 'Cormorant SC', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.circulo{
+  width: 90px;
+  height: 90px;
+  border: 1px dashed #d9b76c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto 0;
+}
+
+.circulo img{
+  width: 45px;
 }
 
 .toque{
@@ -118,24 +151,6 @@ body{
   letter-spacing: 2px;
   color: #777;
 }
-  .icone-item{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #8b1d2c;
-  font-family: 'Cormorant SC', serif;
-  font-size: 8px;
-  letter-spacing: 1px;
-}
-
-.icone-item span{
-  margin-top: 6px;
-}
-
-.icone-item img{
-  width: 55px;
-}
 
 </style>
 </head>
@@ -174,24 +189,52 @@ body{
   
 <div id="contador" class="contador"></div>
 
-  <div class="icones">
+ <div class="icones">
 
-    <a href="https://maps.google.com" target="_blank">
+  <a href="https://maps.google.com" target="_blank" class="icone-curvo">
+    <svg viewBox="0 0 200 200">
+      <path id="localPath" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"/>
+      <text>
+        <textPath href="#localPath" startOffset="50%" text-anchor="middle">
+          LOCAL
+        </textPath>
+      </text>
+    </svg>
+    <div class="circulo">
       <img src="img/icone-local.png">
-       <span>LOCAL</span>
-    </a>
+    </div>
+  </a>
 
-    <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank">
+  <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank" class="icone-curvo">
+    <svg viewBox="0 0 200 200">
+      <path id="confirmarPath" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"/>
+      <text>
+        <textPath href="#confirmarPath" startOffset="50%" text-anchor="middle">
+          CONFIRMAR PRESENÇA
+        </textPath>
+      </text>
+    </svg>
+    <div class="circulo">
       <img src="img/icone-confirmacao.png">
-       <span>CONFIRMAR PRESENÇA</span>
-    </a>
+    </div>
+  </a>
 
-    <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank">
+  <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank" class="icone-curvo">
+    <svg viewBox="0 0 200 200">
+      <path id="presentePath" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"/>
+      <text>
+        <textPath href="#presentePath" startOffset="50%" text-anchor="middle">
+          LISTA DE PRESENTES
+        </textPath>
+      </text>
+    </svg>
+    <div class="circulo">
       <img src="img/icone-presentes.png">
-      <span>LISTA DE PRESENTES</span>
-    </a>
+    </div>
+  </a>
 
-  </div>
+</div>
+ 
 
   <div class="toque">Toque nos ícones para interagir</div>
 
