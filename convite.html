@@ -14,7 +14,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:flex-start;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant SC', serif;
 }
 
 .convite{
@@ -91,14 +91,13 @@ body{
   z-index: 9999;
 }
   .contador{
-  position: absolute;
-  bottom: 120px;
+  margim-top:12px
   width: 100%;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 2px;
   color: #c9a24d;
-  font-family: 'Great Vibes', sans-serif;
+  font-family: 'Cormorant SC', sans-serif;
   }
 </style>
 </head>
@@ -120,6 +119,11 @@ body{
   <div class="data">
     <strong>SÁBADO • 18 ABRIL 2026 ÀS 19H</strong><br> 
   </div>
+
+  <div class="contador">
+  <span id="contador"></span>
+</div>
+
   
 <div id="contador" class="contador"></div>
 
@@ -168,7 +172,7 @@ function iniciarContagem() {
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
     document.getElementById("contador").innerHTML =
-      `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      `Faltam:${dias}d ${horas}h ${minutos}m ${segundos}s`;
   }, 1000);
 }
 
