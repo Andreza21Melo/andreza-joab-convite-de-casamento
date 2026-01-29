@@ -75,9 +75,24 @@ body{
   margin:30px auto 0;
   width:80px;
 }
+.btn-voltar{
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: rgba(191,163,106,0.9);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+}
 </style>
 </head>
 <body>
+
+  <button class="btn-voltar" onclick="voltarCapa()">←</button>
 
 <div class="convite">
 
@@ -117,6 +132,12 @@ body{
   <img src="img/flor-roda-pe.png" class="rodape">
 
 </div>
+
+  <script>
+function voltarCapa(){
+  window.location.href = "index.html";
+}
+  </script>
 
 </body>
 </html>
