@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title>Andreza&Joab</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<title>Convite - Andreza & Joab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      body{
-        margin:0;
-        font-family:sans-serif;
-        background: #fff;
-      }
-
-      .capa{
-        position: relative;
-        width:100%;
-        max-width:480px;
-        margin: auto;
-      }
-
-      .capa img.bg{
-        width:100%;
-        display: block;
-      }
-
-      .laco-bnt{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .laco-bnt img{
-        width: 220px;
-      }
-
-      .contagem{
-        position: absolute;
-        top: 20%;
-        width: 100%;
-        text-align: center;
-        font-size: 18px;
-        color: #9b1c31;
-        font-weight: bold;
-      }
-      </style>
-  </head>
-  <body>
-
-    <div class="capa">
-      <img src="img/capa.png" class="bg">
-
-  <!-- contagem -->
-  <div class="contagem" id="contador"></div>
-
-  <!-- laço clicável -->
-  <a href="convite.html" class="laco-btn">
-    <img src="img/laco.png" alt="Abrir convite">
-  </a>
-
-</div>
-
-<script>
-const dataCasamento = new Date("2026-04-18T19:00:00");
-
-function atualizarContagem() {
-  const agora = new Date();
-  const diff = dataCasamento - agora;
-
-  if (diff <= 0) {
-    document.getElementById("contador").innerText = "É hoje! 💍";
-    return;
-  }
-
-  const dias = Math.floor(diff / (1000*60*60*24));
-  document.getElementById("contador").innerText =
-    `${dias} dias para o grande dia ✨`;
+<style>
+body{
+  margin:0;
+  background:#f8f4ef;
+  font-family:'Cormorant Garamond', serif;
 }
 
-setInterval(atualizarContagem, 1000);
-atualizarContagem();
-</script>
+.container{
+  max-width:400px;
+  margin:auto;
+  padding:20px;
+  text-align:center;
+}
+
+.logo{
+  width:220px;
+  margin:20px auto;
+}
+
+.ornamento{
+  width:80px;
+  margin:10px;
+}
+
+.icones{
+  display:flex;
+  justify-content:space-around;
+  margin-top:30px;
+}
+
+.icones a img{
+  width:55px;
+  transition:0.3s;
+}
+
+.icones a img:hover{
+  transform:scale(1.1);
+}
+
+.rodape{
+  margin-top:40px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <img src="images/linha-dourada.png" class="ornamento">
+
+  <img src="images/logo-andreza-joab.png" class="logo">
+
+  <p>Com alegria convidamos você para celebrar conosco este momento especial.</p>
+
+  <p><strong>Data:</strong> ___ / ___ / ____ <br>
+     <strong>Horário:</strong> __:__ <br>
+     <strong>Local:</strong> __________________</p>
+
+  <div class="icones">
+
+    <a href="https://maps.google.com" target="_blank">
+      <img src="images/icone-local.png">
+    </a>
+
+    <a href="SEU_LINK_DO_FORMS_AQUI" target="_blank">
+      <img src="images/icone-comfrmacao.png">
+    </a>
+
+    <a href="https://andreza21melo.github.io/lista-presentes/" target="_blank">
+      <img src="images/icone-presentes.png">
+    </a>
+
+  </div>
+
+  <div class="rodape">
+    <img src="images/flor-roda-pe.png" width="120">
+  </div>
+
+</div>
 
 </body>
 </html>
