@@ -68,6 +68,16 @@ body{
   color:#8b1d2c;
   font-style:italic;
 }
+.contador{
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #bfa36a;
+  font-family: 'Montserrat', sans-serif;
+}
 </style>
 </head>
 <body>
@@ -83,14 +93,32 @@ body{
 
   <img src="images/laco-pagina1.png" class="laco" onclick="abrirConvite()">
 
-</div>
-
   <div id="contador" class="contador"></div>
-
+</div>
 <script>
 function abrirConvite(){
   window.location.href = "convite.html";
 }
+
+// ===== CONTAGEM REGRESSIVA =====
+const dataCasamento = new Date("2026-06-20T16:00:00"); // altere se necessário
+
+function atualizarContador(){
+  const agora = new Date();
+  const diff = dataCasamento - agora;
+
+  if(diff <= 0){
+    document.getElementById("contador").innerHTML = "É hoje 💍";
+    return;
+  }
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById("contador").innerHTML = `Faltam ${dias} dias`;
+}
+
+setInterval(atualizarContador, 1000);
+atualizarContador();
 </script>
 
 </body>
