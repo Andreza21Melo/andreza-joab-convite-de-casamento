@@ -168,6 +168,14 @@ body{
   background-size: 100% 1.5px;
   background-repeat: no-repeat;
 }
+  .linha-separadora{
+  width: 200px;
+  height: 1px;
+  background-color: #9b1c31;
+  margin: 16px auto;
+  opacity: 0.8;
+}
+
 
 </style>
 </head>
@@ -196,10 +204,14 @@ body{
   <div class="texto">
     <p>Convidam para o seu casamento, a realizar-se:</p>
   </div>
-
+  
+<div class="linha-separadora"></div>
+  
   <div class="data">
     <strong>SÁBADO • 18 ABRIL 2026 ÀS 19H</strong><br> 
   </div>
+  
+  <div class="linha-separadora"></div>
 
   <div class="contador">
   <span id="contador"></span>
@@ -284,7 +296,7 @@ function iniciarContagem() {
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
     document.getElementById("contador").innerHTML =
-      `Faltam:${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      `💍Nosso grande dia é em:${dias}d ${horas}h ${minutos}m ${segundos}s`;
   }, 1000);
 }
 
