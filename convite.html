@@ -387,21 +387,29 @@ body{
 </div>
 
   <script>
-function voltarCapa(){
-  window.location.href = "index.html";
-}
-
 function iniciarContagem() {
-  const dataCasamento = new Date("2026-04-19T00:00:00").getTime();
+  const hoje = new Date();
+
+  // Data do casamento (APENAS DATA, sem hora)
+  const dataEvento = new Date(2026, 3, 18); // mês começa em 0 → abril = 3
+
+  // Data/hora exata da cerimônia (para horas/minutos antes do dia 18)
+  const dataCerimonia = new Date("2026-04-18T19:00:00").getTime();
 
   setInterval(() => {
-    const agora = new Date().getTime();
-    const diferenca = dataCasamento - agora;
-
-    if (diferenca <= 0) {
+    const agora = new Date();
+    
+    // Se já virou o dia 18 (a partir da meia-noite)
+    if (
+      agora.getFullYear() === 2026 &&
+      agora.getMonth() === 3 &&
+      agora.getDate() === 18
+    ) {
       document.getElementById("contador-numero").textContent = "É HOJE! 💍✨";
       return;
     }
+
+    const diferenca = dataCerimonia - agora.getTime();
 
     const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -409,9 +417,9 @@ function iniciarContagem() {
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
     document.getElementById("contador-numero").textContent =
-`${dias}d ${horas}h ${minutos}m ${segundos}s`;
-  }
-  }
+      `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  }, 1000);
+}
 
 iniciarContagem();
   </script>
