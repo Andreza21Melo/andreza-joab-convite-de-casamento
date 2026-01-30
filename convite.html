@@ -403,7 +403,7 @@ function iniciarContagem() {
       return;
     }
 
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const dias = Math.ceil(diferenca / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
