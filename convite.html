@@ -408,7 +408,7 @@ function iniciarContagem() {
     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-    document.getElementById("contador").innerHTML = `
+    document.getElementById("contador-numero").textContent = 
       <span class="contador-titulo">💍 Nosso grande dia é em:</span>
       <strong>${dias}d ${horas}h ${minutos}m ${segundos}s</strong>
     `;
