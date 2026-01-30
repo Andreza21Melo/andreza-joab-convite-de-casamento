@@ -259,7 +259,7 @@ body{
   border-color: #c9a24d;
   box-shadow: 0 0 12px rgba(201,162,77,0.35);
 }
-  @keyframes:respirar{
+  @keyframes respirar{
     0%{
       transform:scale(1);
     }
@@ -277,7 +277,17 @@ body{
 }
   a{
     text-decoration:none;
-    -webkit=tap-highlight-color:transparent;
+    -webkit-tap-highlight-color:transparent;
+  }
+  a,
+  a:focus,
+  a:active,
+  a:visited,
+  button,
+  button:focus,
+  button:active{
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
   }
 </style>
 </head>
