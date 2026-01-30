@@ -69,12 +69,16 @@ body{
   width:200px;
   cursor:pointer;
   z-index:5;
-}
-  .laco{
-    transition:transform 0.3s ease;
+
+  transition:transform 0.8s ease, opacity 0.6s ease;
   }
-  .laco.hover{
-    transform:translate(-50%,-50%)rotate(90deg)scale(1.03);
+  .capa.aberta.laco{
+    transform:translate(-50%,-80%)rotate(90deg)
+    scale(1.1);
+    opacity:0;
+  }
+  .capa.aberta{
+    filter:brightness(1.03);
   }
 
 .texto{
@@ -107,7 +111,12 @@ body{
 </div>
 <script>
 function abrirConvite(){
+  const capa=document.querySelector('.capa');
+  capa.classList.add('aberta');
+
+  setTimeout(()=>{
   window.location.href = "convite.html";
+  }, 800);  
 }
 
 </script>
