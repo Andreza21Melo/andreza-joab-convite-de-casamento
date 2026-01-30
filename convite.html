@@ -63,7 +63,7 @@ body{
   margin:5px 0;
   color:#8b1d2c;
   font-size: 19px;
-  letter spacing: 1.8px;
+  letter-spacing: 1.8px;
 }
 
 .icones{
@@ -177,7 +177,7 @@ body{
   transform: scale(1.05);
 }
   .seta{
-    display:incline-block;
+    display:inline-block;
     transform:translateY(-2px);
   }
   .contador{
@@ -328,7 +328,7 @@ body{
   <div class="linha-separadora"></div>
 
   <div class="contador">
-  <span class="contador-titulo">💍Nosso grande dia é em:</span>
+  <span class="contador-titulo">💍 Nosso grande dia é em:</span>
     <strong id="contador-numero"></strong>
 </div>
 
@@ -399,7 +399,7 @@ function iniciarContagem() {
     const diferenca = dataCasamento - agora;
 
     if (diferenca <= 0) {
-      document.getElementById("contador").innerHTML = "É HOJE! 💍✨";
+      document.getElementById("contador-numero").textContent = "É HOJE! 💍✨";
       return;
     }
 
@@ -409,10 +409,8 @@ function iniciarContagem() {
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
     document.getElementById("contador-numero").textContent = 
-      <span class="contador-titulo">💍 Nosso grande dia é em:</span>
-      <strong>${dias}d ${horas}h ${minutos}m ${segundos}s</strong>
-    `;
-  }, 1000);
+    '${dias}d ${horas}h ${minutos}m ${segundos}s';
+  }, 1000)
 }
 
 iniciarContagem();
