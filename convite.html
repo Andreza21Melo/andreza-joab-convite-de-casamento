@@ -66,7 +66,7 @@ body{
 .icones{
   display: flex;
   justify-content: space-around;
-  margin: 30px 10px;
+  margin: 20px 10px 10;
 }
 
 .icone-curvo{
@@ -78,10 +78,11 @@ body{
 
 .icone-curvo svg{
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 120px;
-  height: 120px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
 }
 
 .icone-curvo text{
@@ -99,7 +100,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 22px auto 0;
+  margin: 38px auto 0;
 }
 
 .circulo img{
@@ -110,7 +111,7 @@ body{
   text-align:center;
   font-size:14px;
   color:#888;
-  margin-top:25px
+  margin-top:8px
 }
 
 .rodape{
@@ -310,7 +311,7 @@ function voltarCapa(){
 }
 
 function iniciarContagem() {
-  const dataCasamento = new Date("2026-04-19T10:00:00").getTime();
+  const dataCasamento = new Date("2026-04-18T19:00:00").getTime();
 
   setInterval(() => {
     const agora = new Date().getTime();
@@ -326,9 +327,12 @@ function iniciarContagem() {
     const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-    document.getElementById("contador").innerHTML =
-     <span class="contador-titulo">💍Nosso grande dia é em:</span>
-<strong>${dias}d ${horas}h ${minutos}m ${segundos}s</strong>
+    document.getElementById("contador").innerHTML = `
+      <span class="contador-titulo">💍 Nosso grande dia é em:</span>
+      <strong>${dias}d ${horas}h ${minutos}m ${segundos}s</strong>
+    `;
+  }, 1000);
+}
 
 iniciarContagem();
   </script>
