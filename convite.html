@@ -386,43 +386,44 @@ body{
 
 </div>
 
-  <script>
+<script>
 function iniciarContagem() {
-  const hoje = new Date();
 
-  // Data do casamento (APENAS DATA, sem hora)
-  const dataEvento = new Date(2026, 3, 18); // mês começa em 0 → abril = 3
-
-  // Data/hora exata da cerimônia (para horas/minutos antes do dia 18)
-  const dataCerimonia = new Date("2026-04-18T19:00:00").getTime();
+  const dataEvento = new Date(2026, 3, 18); 
+  dataEvento.setHours(0,0,0,0);
 
   setInterval(() => {
     const agora = new Date();
-    
-    // Se já virou o dia 18 (a partir da meia-noite)
-    if (
-      agora.getFullYear() === 2026 &&
-      agora.getMonth() === 3 &&
-      agora.getDate() === 18
-    ) {
+
+    const hojeZerado = new Date(agora);
+    hojeZerado.setHours(0,0,0,0);
+
+    if (hojeZerado.getTime() === dataEvento.getTime()) {
       document.getElementById("contador-numero").textContent = "É HOJE! 💍✨";
       return;
     }
 
-    const diferenca = dataCerimonia - agora.getTime();
+    const diffDias = Math.round(
+      (dataEvento - hojeZerado) / (1000 * 60 * 60 * 24)
+    );
 
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+    const fimDoDia = new Date(agora);
+    fimDoDia.setHours(23,59,59,999);
+
+    const diffTempo = fimDoDia - agora;
+
+    const horas = Math.floor(diffTempo / (1000 * 60 * 60));
+    const minutos = Math.floor((diffTempo % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diffTempo % (1000 * 60)) / 1000);
 
     document.getElementById("contador-numero").textContent =
-      `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      `${diffDias}d ${horas}h ${minutos}m ${segundos}s`;
+
   }, 1000);
 }
 
 iniciarContagem();
-  </script>
+</script>
 
 </body>
 </html>
